@@ -22,4 +22,17 @@ $(function () {
     //$progressBar 의 width로 적용(%)
     $girl.css("left", percent);
   });
+
+  //마우스 휠 조작했을 때
+  $window.on("wheel keydown", function (e) {
+    console.log(e);
+
+    if (e.originalEvent.deltaY < 0 || e.keyCode === 38) {
+      //휠을 올렸을 때
+      $girl.css("transform", "rotateY(180deg)");
+    } else if (e.originalEvent.deltaY > 0 || e.keyCode === 40) {
+      //휠을 내렸을 때
+      $girl.css("transform", "rotateY(0)");
+    }
+  });
 });
