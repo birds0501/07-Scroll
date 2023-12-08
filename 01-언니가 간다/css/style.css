@@ -28,6 +28,17 @@ img {
   background: url(../img/walking_girl.gif) no-repeat 50% / cover;
 }
 
+.progress .puppy {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: url(../img/mini.png) no-repeat 50% / cover;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
 .wrap {
   width: 50%;
   margin: 50px auto;
