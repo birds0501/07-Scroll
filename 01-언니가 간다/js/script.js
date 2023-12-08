@@ -4,18 +4,24 @@ $(function () {
   const $document = $(document);
   const $girl = $(".girl");
 
-  //크기를 구해오는 jQuery 메서드 : outerHeight()
-  let windowHeight = $window.outerHeight();
-  let documentHeight = $document.outerHeight();
+  //전역변수로 선언
+  let windowHeight = 0;
+  let documentHeight = 0;
+  let scrollHeight = 0;
 
-  //스크롤 영역의 세로
-  let scrollHeight = documentHeight - windowHeight;
-
-  //브라우저 창이 조절될 때
-  $window.on("resize", function () {
+  //스크롤 영역을 구하는 함수
+  function getHeight() {
     windowHeight = $window.outerHeight();
     documentHeight = $document.outerHeight();
     scrollHeight = documentHeight - windowHeight;
+  }
+
+  //시작하자마자, 스크롤 영역 구하기
+  getHeight();
+
+  //브라우저 창이 조절될 때
+  $window.on("resize", function () {
+    getHeight();
     console.log(scrollHeight);
   });
 
