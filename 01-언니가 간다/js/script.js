@@ -23,6 +23,9 @@ $(function () {
   $window.on("resize", function () {
     getHeight();
     console.log(scrollHeight);
+
+    //스크롤 이벤트를 강제로 발생시킴
+    $window.trigger("scroll");
   });
 
   //스크롤이 발생하면
